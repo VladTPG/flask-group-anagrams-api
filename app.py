@@ -1,19 +1,12 @@
 from flask import Flask, request, jsonify, redirect
 from utils import group_anagrams
-import markdown
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 1 * 1024 * 1024
 
 @app.route("/")
 def index():
-    try:
-        with(open("README.md","r")) as readme_file:
-            content = readme_file.read()
-            html = markdown.markdown(content)
-            return html
-    except FileNotFoundError:
-        return jsonify({"error:": "README.md not found"}), 404
+    return "<h1>Try POSTing to /group-anagrams instead! Format: {\"words\":[List of strings]}</h1>"
 
 
 @app.route("/group-anagrams", methods = ["POST"])
