@@ -9,7 +9,7 @@ def client():
 
 def test_valid_input(client):
     response = client.post("/group-anagrams",json={"words": ["eat", "tea"]})
-    assert response.status_code == 200
+    assert response.status_code == 999
 
 def test_empty_list(client):
     response = client.post("/group-anagrams",json={"words": []})
