@@ -66,12 +66,12 @@ flask run
 ## Examples
 ```bash
 # Valid request
-curl -X POST https://YOUR_URL/group-anagrams \
+curl -X POST https://flask-group-anagrams-api-production.up.railway.app/group-anagrams \
   -H "Content-Type: application/json" \
   -d '{"words": ["eat", "tea", "tan", "ate", "nat", "bat"]}'
 
 # Invalid request
-curl -X POST https://YOUR_URL/group-anagrams \
+curl -X POST https://flask-group-anagrams-api-production.up.railway.app/group-anagrams \
   -H "Content-Type: application/json" \
   -d '{"words": "not a list"}'
 ```
